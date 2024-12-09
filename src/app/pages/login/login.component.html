@@ -1,0 +1,122 @@
+
+
+
+<!-- 
+<section class="bg-light p-3 p-md-4 p-xl-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+          <div class="card border border-light-subtle rounded-4">
+            <div class="card-body p-3 p-md-4 p-xl-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-5">
+                    <div class="text-center mb-4">
+                   
+                    </div>
+                    <h2 class="h4 text-center">Sign In</h2>
+                    <h3 class="fs-6 fw-normal text-secondary text-center m-0">Enter your details to Sign in</h3>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="alert alert-primary mb-4" *ngIf="successMsg">
+                {{successMsg}}
+            </div>
+            <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+                {{errorMsg}}
+            </div>
+            <div class="alert alert-danger mb-4" *ngIf="msg">
+                {{msg}}
+            </div>
+
+              <form action="#!">
+                <div class="row gy-3 overflow-hidden">
+       
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required [(ngModel)]="username">
+                      <label for="email" class="form-label">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required [(ngModel)]="password">
+                      <label for="password" class="form-label">Password</label>
+                    </div>
+                  </div>
+           
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <button class="btn bsb-btn-xl btn-primary" type="submit" (click)="onLogin()">Sign in</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="bg-light p-3 p-md-4 p-xl-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-3 p-md-4 p-xl-5">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2 class="h4 text-dark mb-3">Welcome Back</h2>
+                                <h3 class="fs-6 fw-normal text-secondary m-0">Enter your details to sign in</h3>
+                            </div>
+                        </div>
+
+                        <!-- Success and Error Messages -->
+                        <div class="alert alert-primary mb-4" *ngIf="successMsg">
+                            {{successMsg}}
+                        </div>
+                        <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+                            {{errorMsg}}
+                        </div>
+                        <div class="alert alert-danger mb-4" *ngIf="msg">
+                            {{msg}}
+                        </div>
+
+                        <!-- Form -->
+                        <form action="#!">
+                            <div class="row gy-3 overflow-hidden">
+                                
+                                <!-- Email Field -->
+                                <div class="col-12">
+                                    <div class="form-floating mb-4">
+                                        <input type="email" class="form-control form-control-lg border-0 shadow-sm" name="email" id="email" placeholder="name@example.com" required [(ngModel)]="username">
+                                        <label for="email" class="form-label text-muted">Email</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Password Field -->
+                                <div class="col-12">
+                                    <div class="form-floating mb-4">
+                                        <input type="password" class="form-control form-control-lg border-0 shadow-sm" name="password" id="password" value="" placeholder="Password" required [(ngModel)]="password">
+                                        <label for="password" class="form-label text-muted">Password</label>
+                                    </div>
+                                </div>
+
+                                <!-- Sign In Button -->
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg shadow-lg" type="submit" (click)="onLogin()">Sign In</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

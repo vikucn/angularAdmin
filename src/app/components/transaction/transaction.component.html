@@ -1,0 +1,179 @@
+<app-admin-navbar></app-admin-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Search bar section */
+        .search-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .search-section input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        .search-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-section button:hover {
+            background-color: #45a049;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Transaction type styling */
+        .withdraw {
+            color: red;
+        }
+
+        .deposit {
+            color: green;
+        }
+
+        .transfer {
+            color: blue;
+        }
+
+        /* Disabled inputs and button */
+        .disabled {
+            background-color: #e0e0e0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Search section -->
+        <div class="search-section">
+           
+            <input type="date" id="startDate" class="disabled" >
+            <input type="date" id="endDate" class="disabled" >
+            <button id="showStats" class="disabled" disabled onclick="filterTransactions()">Search</button>
+        </div>
+
+        <!-- Transaction table -->
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Transaction Type</th>
+                    <th>Transaction Date</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transactions will be displayed here -->
+                <tr>
+                    <td>123456789</td>
+                    <td class="deposit">Deposit</td>
+                    <td>2024-12-01</td>
+                    <td>$1000</td>
+                </tr>
+                <tr>
+                    <td>987654321</td>
+                    <td class="withdraw">Withdraw</td>
+                    <td>2024-11-30</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>123456789</td>
+                    <td class="transfer">Transfer</td>
+                    <td>2024-11-28</td>
+                    <td>$2000</td>
+                </tr>
+                <!-- Additional transactions can be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        // Function to filter transactions based on the selected dates
+        function filterTransactions() {
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var rows = document.querySelectorAll('#transactionTable tbody tr');
+            
+            rows.forEach(function(row) {
+                var transactionDate = row.cells[2].textContent;
+                if (startDate && endDate) {
+                    if (transactionDate >= startDate && transactionDate <= endDate) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                } else {
+                    row.style.display = '';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

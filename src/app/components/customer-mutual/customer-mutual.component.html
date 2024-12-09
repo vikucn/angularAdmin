@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .card h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .card .info {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card .info:last-child {
+            border-bottom: none;
+        }
+
+        .card .info span {
+            display: block;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .card .info strong {
+            font-size: 16px;
+            color: #333;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" *ngFor="let c of customerBonds ">
+        <h1>Customer Details</h1>
+        <div class="info">
+            <span>First Name</span>
+            <strong>{{c.firstName}}</strong>
+        </div>
+        <div class="info">
+            <span>Last Name</span>
+            <strong>{{c.lastName}}</strong>
+        </div>
+        <div class="info">
+            <span>Account Number</span>
+            <strong>{{c.accountNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>Amount Invested</span>
+            <strong>{{c.amountMutualFunds}}</strong>
+        </div>
+        <!-- <div class="info">
+            <span>Contact Number</span>
+            <strong>{{c.contactNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>Address</span>
+            <strong>{{c.address}}</strong>
+        </div>
+        <div class="info">
+            <span>Aadhar Number</span>
+            <strong>{{c.aadharNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>PAN Number</span>
+            <strong>{{c.panNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>Email</span>
+            <strong>{{c.email}}</strong>
+        </div> -->
+    </div>
+
+    <!-- <div class="card">
+        <h1>Customer Details</h1>
+        <div class="info">
+            <span>First Name</span>
+            <strong>Emily</strong>
+        </div>
+        <div class="info">
+            <span>Last Name</span>
+            <strong>Smith</strong>
+        </div>
+        <div class="info">
+            <span>Date of Birth</span>
+            <strong>1988-07-22</strong>
+        </div>
+        <div class="info">
+            <span>Gender</span>
+            <strong>Female</strong>
+        </div>
+        <div class="info">
+            <span>Contact Number</span>
+            <strong>987-654-3210</strong>
+        </div>
+        <div class="info">
+            <span>Address</span>
+            <strong>123 Maple Avenue, Mumbai, Maharashtra</strong>
+        </div>
+        <div class="info">
+            <span>Aadhar Number</span>
+            <strong>5678-1234-9876</strong>
+        </div>
+        <div class="info">
+            <span>PAN Number</span>
+            <strong>QRSTU1234L</strong>
+        </div>
+        <div class="info">
+            <span>Email</span>
+            <strong>emily.smithemail.com</strong>
+        </div>
+    </div> -->
+</body>
+</html>

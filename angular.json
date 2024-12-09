@@ -28,6 +28,7 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": []
           },
@@ -85,7 +86,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "primeng/resources/primeng.min.css"
             ],
             "scripts": []
           }

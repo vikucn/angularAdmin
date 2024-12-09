@@ -1,0 +1,141 @@
+<!-- 
+  <div class="d-flex flex-column flex-shrink-0 p-3" style="background: linear-gradient(135deg, #0a2b47 0%, #2575fc 100%); width: 220px; border-right: 1px solid #ddd; height: 100vh;">
+
+  <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    <span class="fs-4 fw-bold">ADMIN PANEL</span>
+  </a>
+  <hr class="text-white">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a [routerLink]="['admin-list']" [ngClass]="getClassAl()" (mouseover)="linkClick('adminDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#home"></use></svg>
+        <span class="ms-2">Home</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['employee-list']" [ngClass]="getClassEl()" (mouseover)="linkClick('employeeDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#person"></use></svg>
+        <span class="ms-2">Employees</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['customer']" [ngClass]="getClassCl()" (mouseover)="linkClick('customerDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#people"></use></svg>
+        <span class="ms-2">Customers</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['investment-list']" [ngClass]="getClassIl()" (mouseover)="linkClick('investmentDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#graph-up"></use></svg>
+        <span class="ms-2">Investments</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['about-list']" [ngClass]="getClassAboutl()" (mouseover)="linkClick('aboutDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#info-circle"></use></svg>
+        <span class="ms-2">About</span>
+      </a>
+    </li>
+  </ul>
+  <hr class="text-white">
+</div>
+
+
+<style>
+  .nav-link:hover {
+    background-color: #5c6bc0;
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:active {
+    background-color: #4f66e6;
+    transform: scale(1);
+  }
+
+  .nav-item .bi {
+    fill: currentColor;
+  }
+
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+
+  .rounded-3 {
+    border-radius: 8px;
+  }
+</style> -->
+
+<div class="d-flex flex-column flex-shrink-0 p-3" style="background: linear-gradient(135deg, #0a2b47 0%, #2575fc 100%); width: 220px; border-right: 1px solid #ddd; height: 100vh; border-radius: 10px 0 0 10px;">
+
+  <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
+    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    <span class="fs-4 fw-bold">ADMIN PANEL</span>
+  </a>
+  <hr class="text-white">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a [routerLink]="['admin-list']" [ngClass]="getClassAl()" (mouseover)="linkClick('adminDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#home"></use></svg>
+        <span class="ms-2">Home</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['employee-list']" [ngClass]="getClassEl()" (mouseover)="linkClick('employeeDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#person"></use></svg>
+        <span class="ms-2">Employees</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['customer']" [ngClass]="getClassCl()" (mouseover)="linkClick('customerDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#people"></use></svg>
+        <span class="ms-2">Customers</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['investment-list']" [ngClass]="getClassIl()" (mouseover)="linkClick('investmentDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#graph-up"></use></svg>
+        <span class="ms-2">Investments</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['about-list']" [ngClass]="getClassAboutl()" (mouseover)="linkClick('aboutDetails')" class="nav-link text-light py-3 rounded-3 d-flex align-items-center transition-all">
+        <svg class="bi me-2" width="20" height="20"><use xlink:href="#info-circle"></use></svg>
+        <span class="ms-2">About</span>
+      </a>
+    </li>
+  </ul>
+  <hr class="text-white">
+</div>
+
+<style>
+  .nav-link:hover {
+    background-color: #5c6bc0;
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:active {
+    background-color: #4f66e6;
+    transform: scale(1);
+  }
+
+  .nav-item .bi {
+    fill: currentColor;
+  }
+
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+
+  .rounded-3 {
+    border-radius: 8px;
+  }
+</style>
+
+
+
+

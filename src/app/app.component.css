@@ -1,0 +1,7 @@
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    background-image: url(../../public/background/abstract-financial-chart-line-graph-600nw-652280932.webp); /* Background image */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+}

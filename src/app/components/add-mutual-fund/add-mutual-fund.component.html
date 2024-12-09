@@ -1,0 +1,248 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Investment Details</h2>
+        <div class="alert alert-primary mb-4" *ngIf="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div>
+        <form action="#" method="POST">
+            <label for="fundName">Investment Name:</label>
+            <input type="text" id="fundName" name="name" [(ngModel)]="name" value="Growth Fund" required>
+
+            <label for="unitsPurchased">Units Available:</label>
+            <input type="number" id="unitsPurchased" name="unitsPurchased" [(ngModel)]="unitsPurchased" value="100" required>
+
+            <label for="purchasePrice">Purchase Price (per unit):</label>
+            <input type="number" id="purchasePrice" name="purchasePrice"  [(ngModel)]="purchasePrice" value="120.5" step="0.01" required>
+
+            <button type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Form</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Form container styles */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Alert box styles */
+        .alert {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .alert-primary {
+            background-color: #3498db;
+        }
+
+        .alert-danger {
+            background-color: #e74c3c;
+        }
+
+        /* Label and input field styles */
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 10px rgba(41, 128, 185, 0.3);
+            outline: none;
+        }
+
+        /* Button styles */
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2ecc71;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #2ecc71;
+            transform: scale(0.98);
+        }
+
+        /* Responsive design */
+        @media (max-width: 400px) {
+            .form-container {
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Investment Details</h2>
+        <div class="alert alert-primary" *ngIf="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div>
+        <form action="#" method="POST">
+            <label for="fundName">Investment Name:</label>
+            <input type="text" id="fundName" name="name" [(ngModel)]="name" value="Growth Fund" required>
+
+            <label for="unitsPurchased">Units Available:</label>
+            <input type="number" id="unitsPurchased" name="unitsPurchased" [(ngModel)]="unitsPurchased" value="100" required>
+
+            <label for="purchasePrice">Purchase Price (per unit):</label>
+            <input type="number" id="purchasePrice" name="purchasePrice" [(ngModel)]="purchasePrice" value="120.5" step="0.01" required>
+
+            <button type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

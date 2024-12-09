@@ -1,0 +1,255 @@
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Options</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.investment-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.investment-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.investment-header h1 {
+    font-size: 2.5rem;
+    color: #1f3c74;
+}
+
+.investment-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.investment-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.investment-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.investment-card h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.investment-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="investment-page">
+        <div class="investment-header">
+            <h1>Admin - Manage Investment Options</h1>
+            <p>As an admin, you can oversee and manage investment opportunities for the bank's customers. Choose the investment option to see detailed information and manage customer investments.</p>
+        </div>
+        <div class="investment-cards">
+            <div class="investment-card">
+                <h2>Bonds</h2>
+                <p>Manage low-risk bond investments. Bonds provide stable, long-term returns, making them an excellent choice for conservative investors.</p>
+                <a (click)="goToBonds()" class="card-button">Manage Bonds</a>
+            </div>
+            <div class="investment-card">
+                <h2>Fixed Deposit</h2>
+                <p>Oversee fixed deposit investments. Fixed deposits offer guaranteed returns, making them a secure option for customers looking for stable growth.</p>
+                <a (click)="goToFixedDeposits()" class="card-button">Manage FD</a>
+            </div>
+            <div class="investment-card">
+                <h2>Mutual Funds</h2>
+                <p>Handle investments in mutual funds. Mutual funds provide diversified portfolios managed by experts, ideal for customers seeking higher returns with moderate risk.</p>
+                <a (click)="goToMutualFunds()" class="card-button">Manage Mutual Funds</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ -->
+
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Investment Options</title>
+     <style>
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+ 
+         body {
+             font-family: 'Arial', sans-serif;
+             background-color: #f4f7fb;
+             color: #333;
+         }
+ 
+         .investment-page {
+             max-width: 1200px;
+             margin: 0 auto;
+             padding: 50px 20px;
+         }
+ 
+         .investment-header {
+             text-align: center;
+             margin-bottom: 60px;
+         }
+ 
+         .investment-header h1 {
+             font-size: 2.8rem;
+             color: #2c3e50;
+             font-weight: 700;
+             margin-bottom: 10px;
+         }
+ 
+         .investment-header p {
+             font-size: 1.2rem;
+             color: #7f8c8d;
+             margin-top: 10px;
+             line-height: 1.6;
+         }
+ 
+         .investment-cards {
+             display: flex;
+             justify-content: space-between;
+             gap: 30px;
+             flex-wrap: wrap;
+         }
+ 
+         .investment-card {
+             background-color: #fff;
+             padding: 30px;
+             border-radius: 12px;
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+             width: 30%;
+             text-align: center;
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             border: 1px solid #f1f1f1;
+         }
+ 
+         .investment-card:hover {
+             transform: translateY(-15px);
+             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+         }
+ 
+         .investment-card h2 {
+             font-size: 2rem;
+             color: #2980b9;
+             font-weight: 600;
+             margin-bottom: 20px;
+         }
+ 
+         .investment-card p {
+             font-size: 1.1rem;
+             color: #7f8c8d;
+             margin-bottom: 25px;
+             line-height: 1.5;
+         }
+ 
+         .card-button {
+             display: inline-block;
+             padding: 14px 28px;
+             font-size: 1.1rem;
+             background-color: #2980b9;
+             color: #ffffff !important;
+             text-decoration: none;
+             border-radius: 8px;
+             font-weight: 500;
+             transition: background-color 0.3s ease, transform 0.3s ease;
+         }
+ 
+         .card-button:hover {
+             background-color: #3498db;
+             transform: translateY(-5px);
+         }
+ 
+         .card-button:focus {
+             outline: none;
+         }
+ 
+     </style>
+ </head>
+ <body>
+     <div class="investment-page">
+         <div class="investment-header">
+             <h1>Admin - Manage Investment Options</h1>
+             <p>As an admin, you have the authority to manage and oversee investment opportunities for the bank's customers. Select the investment option below to view detailed information and manage customer investments.</p>
+         </div>
+ 
+         <div class="investment-cards">
+             <div class="investment-card">
+                 <h2>Bonds</h2>
+                 <p>Manage low-risk bond investments that provide stable, long-term returns. A great option for conservative investors looking for reliability.</p>
+                 <a (click)="goToBonds()" class="card-button">Manage Bonds</a>
+             </div>
+             <div class="investment-card">
+                 <h2>Fixed Deposit</h2>
+                 <p>Oversee fixed deposit investments that offer guaranteed returns. A secure option for customers seeking stable growth with minimal risk.</p>
+                 <a (click)="goToFixedDeposits()" class="card-button">Manage FD</a>
+             </div>
+             <div class="investment-card">
+                 <h2>Mutual Funds</h2>
+                 <p>Handle mutual fund investments, providing diversified portfolios managed by experts. Ideal for customers looking for moderate risk and higher returns.</p>
+                 <a (click)="goToMutualFunds()" class="card-button">Manage Mutual Funds</a>
+             </div>
+         </div>
+     </div>
+ </body>
+ </html>
+ 

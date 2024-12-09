@@ -1,0 +1,233 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Deposit Form</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Fixed Deposit Details</h2>
+        <div class="alert alert-primary mb-4" *ngIf="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div>
+        <form action="#" method="POST">
+            <label for="depositAmount">Deposit Amount:</label>
+            <input type="number" id="depositAmount" name="depositAmount" [(ngModel)]="depositAmount" value="95000.0" required>
+
+            <label for="interestRateFd">Interest Rate (%):</label>
+            <input type="number" id="interestRateFd" name="interestRateFd" [(ngModel)]="interestRateFd" value="5.5" step="0.01" required>
+
+            <label for="maturityDateFd">Maturity Date:</label>
+            <input type="date" id="maturityDateFd" name="maturityDateFd"  [(ngModel)]="maturityDateFd" value="2030-03-15" required>
+
+            <button type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Deposit Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .alert-primary {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus,
+        input[type="date"]:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .form-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Fixed Deposit Details</h2>
+
+        <!-- Success and Error Messages -->
+        <div class="alert alert-primary mb-4" *ngIf="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div>
+
+        <!-- Form Section -->
+        <form action="#" method="POST">
+            <label for="depositAmount">Deposit Amount:</label>
+            <input type="number" id="depositAmount" name="depositAmount" [(ngModel)]="depositAmount" value="95000.0" required>
+
+            <label for="interestRateFd">Interest Rate (%):</label>
+            <input type="number" id="interestRateFd" name="interestRateFd" [(ngModel)]="interestRateFd" value="5.5" step="0.01" required>
+
+            <label for="maturityDateFd">Maturity Date:</label>
+            <input type="date" id="maturityDateFd" name="maturityDateFd" [(ngModel)]="maturityDateFd" value="2030-03-15" required>
+
+            <button type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

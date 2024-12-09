@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bond Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 5px #ffa500;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #ffa500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff7f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Bond Data</h2>
+        <div class="alert alert-primary mb-4" *ngIf="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            {{errorMsg}}
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="faceValue">Face Value</label>
+                <input type="number" id="faceValue" class="form-control"  name="faceValue" [(ngModel)]="faceValue" placeholder="Enter face value" required>
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Interest Rate (%)</label>
+                <input type="number" id="interestRate" class="form-control" name="interestRate" [(ngModel)]="interestRate" step="0.1" placeholder="Enter interest rate" required>
+            </div>
+            <div class="form-group">
+                <label for="bondType">Bond Type</label>
+                <select id="bondType" class="form-control" name="bondType" [(ngModel)]="bondType" required>
+                    <option value="">Select Bond Type</option>
+                    <option value="GOVERNMENT">Government</option>
+                    <option value="RBI">RBI</option>
+                    <option value="GOLD">Gold</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="maturityDate">Maturity Date</label>
+                <input type="date" class="form-control" name="maturityDate" id="maturityDate" [(ngModel)]="maturityDate" required>
+            </div>
+            <button  class="submit-btn" (click)="onSubmit()">Submit Bond</button>
+        </form>
+    </div>
+</body>
+</html>

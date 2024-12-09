@@ -1,0 +1,388 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            background: #fafafa;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .detail span {
+            font-weight: bold;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .detail div {
+            color: #333;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .actions button {
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .actions button.update {
+            background-color: #28a745;
+        }
+
+        .actions button.delete {
+            background-color: #dc3545;
+        }
+
+        .actions button:hover {
+            background-color: #007bff;
+        }
+
+        .actions button.delete:hover {
+            background-color: #c82333;
+        }
+
+        .actions button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+        }
+
+        @media (max-width: 480px) {
+            .detail {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .detail span {
+                margin-bottom: 8px;
+            }
+
+            .actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12">
+          <div class="alert alert-success mb-4" *ngIf="successMsg">
+            <strong>Success!</strong> {{ successMsg }}
+          </div>
+          <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            <strong>Error!</strong> {{ errorMsg }}
+          </div>
+        </div>
+      </div>
+    <div class="container" *ngFor="let emp of employee">
+        <div class="header">
+            <h1>Employee Details</h1>
+            <p>View and manage employee details below</p>
+        </div>
+        <div class="details">
+            <div class="detail">
+                <span>First Name:</span> <div>{{emp.firstName}}</div>
+            </div>
+            <div class="detail">
+                <span>Last Name:</span> <div>{{emp.lastName}}</div>
+            </div>
+            <div class="detail">
+                <span>Date of Birth:</span> <div>{{emp.dateOfBirth}}</div>
+            </div>
+            <div class="detail">
+                <span>Gender:</span> <div>{{emp.gender}}</div>
+            </div>
+            <div class="detail">
+                <span>Contact Number:</span> <div>{{emp.contactNumber}}</div>
+            </div>
+            <div class="detail">
+                <span>Address:</span> <div>{{emp.address}}</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="update" (click)="updateEmployee(emp.id)">Update</button>
+            <button class="upload" (click)="uploadPhoto(emp.id)">Upload Photo</button>
+            <button class="delete" (click)="deleteEmployee()">Delete</button>
+        </div>
+    </div>
+
+    <script>
+      
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .detail span {
+            font-weight: 600;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .detail div {
+            color: #333;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .actions button {
+            padding: 14px 30px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .actions button.update {
+            background-color: #28a745;
+        }
+
+        .actions button.upload {
+            background-color: #007bff;
+        }
+
+        .actions button.delete {
+            background-color: #dc3545;
+        }
+
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+
+        .actions button.update:hover {
+            background-color: #218838;
+        }
+
+        .actions button.delete:hover {
+            background-color: #c82333;
+        }
+
+        .actions button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+        }
+
+        .alert {
+            margin: 20px auto;
+            max-width: 700px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .alert-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .alert-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .detail {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .detail span {
+                margin-bottom: 8px;
+            }
+
+            .actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-12">
+          <div class="alert alert-success mb-4" *ngIf="successMsg">
+            <strong>Success!</strong> {{ successMsg }}
+          </div>
+          <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+            <strong>Error!</strong> {{ errorMsg }}
+          </div>
+        </div>
+    </div>
+
+    <div class="container" *ngFor="let emp of employee">
+        <div class="header">
+            <h1>Employee Details</h1>
+            <p>View and manage employee details below</p>
+        </div>
+        <div class="details">
+            <div class="detail">
+                <span>First Name:</span> <div>{{emp.firstName}}</div>
+            </div>
+            <div class="detail">
+                <span>Last Name:</span> <div>{{emp.lastName}}</div>
+            </div>
+            <div class="detail">
+                <span>Date of Birth:</span> <div>{{emp.dateOfBirth}}</div>
+            </div>
+            <div class="detail">
+                <span>Gender:</span> <div>{{emp.gender}}</div>
+            </div>
+            <div class="detail">
+                <span>Contact Number:</span> <div>{{emp.contactNumber}}</div>
+            </div>
+            <div class="detail">
+                <span>Address:</span> <div>{{emp.address}}</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="update" (click)="updateEmployee(emp.id)">Update</button>
+            <button class="upload" (click)="uploadPhoto(emp.id)">Upload Photo</button>
+            <button class="delete" (click)="deleteEmployee()">Delete</button>
+        </div>
+    </div>
+
+    <script>
+        // Any JavaScript functionality here (if needed)
+    </script>
+</body>
+</html>
+

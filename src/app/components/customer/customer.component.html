@@ -1,0 +1,411 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Button styling */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Cards container */
+        .customer-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        /* Individual customer card */
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 25px;
+            width: calc(33.333% - 30px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card p strong {
+            color: #4CAF50;
+        }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+
+       
+
+        .search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  padding: 8px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-container">
+            <input type="text" id="search" class="search-bar" placeholder="Search by Account Number">
+            <button class="btn" id="viewTransactions" (click)="searchAccount()">Search</button>
+          </div>
+          
+
+       
+        <div class="customer-cards">
+            <div class="card" *ngFor="let dto of customerDto">
+                <h3>{{dto.firstName}}{{space}}{{dto.lastName}}</h3>
+                <p><strong>Account Number:</strong> {{dto.accountNumber}}</p>
+                <p><strong>Investment Type:</strong> {{dto.investmentTypes}}</p>
+               
+                <p><strong>Loan Type:</strong> {{dto.loanType}}</p>
+                <p><strong>Loan Amount:</strong> {{dto.loanAmount}}</p>
+                <p><strong>Card Type:</strong> {{dto.cardType}}</p>
+                <button class="btn btn-primary" (click)="showCustomerDto(dto.accountNumber)">View Customer</button>
+            </div>
+        </div>
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <button class="page-link" (click)="prev()"  tabindex="-1" aria-disabled="true">Previous</button>
+                  </li>
+                  <li class="page-item" *ngFor="let i of pageArray">
+                        <button class="page-link" (click)="onClick(i-1)" >{{i}}</button>
+                    </li>
+                   
+                  <li class="page-item">
+                    <button class="page-link"  (click)="next()">Next</button>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+        
+    </div>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        /* Button styling */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            width: 300px;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+        }
+
+        /* Cards container */
+        .customer-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        /* Individual customer card */
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 25px;
+            width: calc(33.333% - 30px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .card p strong {
+            color: #3498db;
+        }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+
+        /* Pagination Styling */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .page-link {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .page-link:hover {
+            background-color: #2980b9;
+        }
+
+        .page-item.disabled .page-link {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        /* Custom styles for buttons inside cards */
+        .card .btn-primary {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn-primary:hover {
+            background-color: #2ecc71;
+            border-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search" class="search-bar" placeholder="Search by Account Number">
+            <button class="btn" id="viewTransactions" (click)="searchAccount()">Search</button>
+        </div>
+
+        <div class="customer-cards">
+            <div class="card" *ngFor="let dto of customerDto">
+                <h3>{{dto.firstName}}{{space}}{{dto.lastName}}</h3>
+                <p><strong>Account Number:</strong> {{dto.accountNumber}}</p>
+                <p><strong>Investment Type:</strong> {{dto.investmentTypes}}</p>
+                <p><strong>Loan Type:</strong> {{dto.loanType}}</p>
+                <p><strong>Loan Amount:</strong> {{dto.loanAmount}}</p>
+                <p><strong>Card Type:</strong> {{dto.cardType}}</p>
+                <button class="btn btn-primary" (click)="showCustomerDto(dto.accountNumber)">View Customer</button>
+            </div>
+        </div>
+
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <button class="page-link" (click)="prev()" tabindex="-1" aria-disabled="true">Previous</button>
+                  </li>
+                  <li class="page-item" *ngFor="let i of pageArray">
+                        <button class="page-link" (click)="onClick(i-1)">{{i}}</button>
+                    </li>
+                  <li class="page-item">
+                    <button class="page-link" (click)="next()">Next</button>
+                  </li>
+                </ul>
+              </nav>
+        </div>
+        
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,194 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .card h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .card .info {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card .info:last-child {
+            border-bottom: none;
+        }
+
+        .card .info span {
+            display: block;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .card .info strong {
+            font-size: 16px;
+            color: #333;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" *ngFor="let c of customerBonds ">
+        <h1>Customer Details</h1>
+        <div class="info">
+            <span>First Name</span>
+            <strong>{{c.firstName}}</strong>
+        </div>
+        <div class="info">
+            <span>Last Name</span>
+            <strong>{{c.lastName}}</strong>
+        </div>
+        <div class="info">
+            <span>Account Number</span>
+            <strong>{{c.accountNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>Amount Invested</span>
+            <strong>{{c.amountBond}}</strong>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 420px;
+            padding: 25px;
+            margin: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .card .info {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .info:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .info span {
+            display: block;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        .card .info strong {
+            font-size: 18px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+            }
+        }
+
+        /* Add some responsiveness to the card layout */
+        @media (max-width: 768px) {
+            .card {
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" *ngFor="let c of customerBonds">
+        <h1>Customer Details</h1>
+        <div class="info">
+            <span>First Name</span>
+            <strong>{{c.firstName}}</strong>
+        </div>
+        <div class="info">
+            <span>Last Name</span>
+            <strong>{{c.lastName}}</strong>
+        </div>
+        <div class="info">
+            <span>Account Number</span>
+            <strong>{{c.accountNumber}}</strong>
+        </div>
+        <div class="info">
+            <span>Amount Invested</span>
+            <strong>{{c.amountBond}}</strong>
+        </div>
+    </div>
+</body>
+</html>
+

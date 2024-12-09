@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Maverick Bank</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body and Font Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #2980b9;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      font-weight: 300;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      background-color: white;
+    }
+
+    .about .container {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .about-text h2 {
+      font-size: 2.5em;
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Values Section */
+    .values {
+      background-color: #ecf0f1;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .values h2 {
+      font-size: 2.5em;
+      color: #2980b9;
+      margin-bottom: 30px;
+    }
+
+    .values-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .value {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .value h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #2980b9;
+    }
+
+    .value p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: white;
+    }
+
+    .services h2 {
+      font-size: 2.5em;
+      color: #2980b9;
+      margin-bottom: 30px;
+    }
+
+    .services-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .service {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #2980b9;
+    }
+
+    .service p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #2980b9;
+      color: white;
+    }
+
+    .contact h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .contact-btn {
+      background-color: white;
+      color: #2980b9;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: #3498db;
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .values-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .value {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .services-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Maverick Bank</h1>
+      <p>Your trusted partner in finance</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>At Maverick Bank, we are committed to providing our customers with a secure, innovative, and customer-centric banking experience. With cutting-edge technology, we offer a range of services to help you manage your finances seamlessly and securely.</p>
+        <p>Our goal is to redefine the way banking works, by making it simpler, faster, and more accessible for everyone. Whether you are a customer, an employee, or an administrator, we are here to help you every step of the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values">
+    <h2>Our Core Values</h2>
+    <div class="values-container">
+      <div class="value">
+        <h3>Trust</h3>
+        <p>We believe in building long-term relationships based on trust and integrity with our customers.</p>
+      </div>
+      <div class="value">
+        <h3>Innovation</h3>
+        <p>We leverage cutting-edge technology to provide innovative banking solutions that cater to your needs.</p>
+      </div>
+      <div class="value">
+        <h3>Security</h3>
+        <p>Your financial security is our top priority. We employ advanced measures to keep your data and transactions safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service">
+        <h3>Personal Banking</h3>
+        <p>Accounts, loans, and credit cards designed to meet your personal financial needs.</p>
+      </div>
+      <div class="service">
+        <h3>Business Banking</h3>
+        <p>Comprehensive financial solutions for businesses of all sizes, from startups to enterprises.</p>
+      </div>
+      <div class="service">
+        <h3>Investment Services</h3>
+        <p>Maximize your wealth with expert advice on investments in stocks, bonds, mutual funds, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like more information about our services, feel free to get in touch.</p>
+    <button class="contact-btn">Get in Touch</button>
+  </section>
+
+</body>
+</html>

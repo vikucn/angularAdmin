@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @Component({
   selector: 'app-root',

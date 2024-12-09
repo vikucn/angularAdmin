@@ -1,0 +1,388 @@
+
+<!-- 
+  <div class="container">
+    <div class="row">
+      
+        <div class="col-md-12">
+            <form [formGroup]="signUpForm" (ngSubmit)="onRegister()">
+                <div class="card">
+                    <div class="card-header">
+                        Sign Up
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-primary mb-4" *ngIf="successMsg">
+                                    {{successMsg}}
+                                </div>
+                                <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+                                    {{errorMsg}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label>Enter First Name: </label>
+                                    <input type="text" class="form-control" formControlName="firstName" (keyup)="resetMsg()">
+                                    <span *ngIf="signUpForm.controls['firstName'].touched 
+                                                                 && signUpForm.controls['firstName'].invalid"> 
+                                        <span *ngIf="signUpForm.controls['firstName'].errors?.['required']">
+                                            <small>First name is mandatory</small>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="mb-4">
+                                  <label>Enter Middle Name: </label>
+                                  <input type="text" class="form-control" formControlName="middleName" (keyup)="resetMsg()">
+                              
+                              </div>
+                                <div class="mb-4">
+                                  <label>Enter Last Name: </label>
+                                  <input type="text" class="form-control" formControlName="lastName" (keyup)="resetMsg()">
+                                  <span *ngIf="signUpForm.controls['lastName'].touched 
+                                                               && signUpForm.controls['lastName'].invalid"> 
+                                      <span *ngIf="signUpForm.controls['lastName'].errors?.['required']">
+                                          <small>Last name is mandatory</small>
+                                      </span>
+                                  </span>
+                              </div>
+                                <div class="mb-4">
+                                    <label>Enter Contact: </label>
+                                    <input type="text" class="form-control"  formControlName="contactNumber" (keyup)="resetMsg()">
+                                    <span *ngIf="signUpForm.controls['contactNumber'].touched 
+                                                                 && signUpForm.controls['contactNumber'].invalid"> 
+                                        <span  *ngIf="signUpForm.controls['contactNumber'].errors?.['required']">
+                                            <small>contact is mandatory</small>
+                                        </span>
+                                        <span  *ngIf="signUpForm.get('contact')?.hasError('minlength') 
+                                                        || signUpForm.get('contact')?.hasError('maxlength')">
+                                            <small>please provide 10 digit contact without country code(+91). </small>
+                                        </span>
+                                    </span>
+                                </div>
+
+                              <div class="mb-4">
+                                <label>Enter Gender: </label>
+                                <input type="text" class="form-control"  formControlName="gender" (keyup)="resetMsg()">
+                                <span *ngIf="signUpForm.controls['gender'].touched 
+                                                             && signUpForm.controls['gender'].invalid"> 
+                                    <span  *ngIf="signUpForm.controls['gender'].errors?.['required']">
+                                        <small>Gender is mandatory</small>
+                                    </span>
+                                  
+                                </span>
+                            </div>
+                            <div class="mb-4">
+                              <label>Enter Address: </label>
+                              <input type="text" class="form-control"  formControlName="address" (keyup)="resetMsg()">
+                              <span *ngIf="signUpForm.controls['address'].touched 
+                                                           && signUpForm.controls['address'].invalid"> 
+                                  <span  *ngIf="signUpForm.controls['address'].errors?.['required']">
+                                      <small>Address is mandatory</small>
+                                  </span>
+                                 
+                              </span>
+                          </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label>Enter Username: </label> 
+                                    <input type="text" class="form-control"  formControlName="username">
+                                    <span *ngIf="signUpForm.controls['username'].touched 
+                                                    && signUpForm.controls['username'].invalid"> 
+                                        <span *ngIf="signUpForm.controls['username'].errors?.['required']">
+                                            <small>username is mandatory</small>
+                                        </span>
+                                        <span  *ngIf="signUpForm.get('username')?.hasError('minlength')">
+                                            <small>username should be minimum of size 4   </small>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="mb-4">
+                                    <label>Enter Password: </label>
+                                    <input type="password" class="form-control"  formControlName="password">
+                                    <span *ngIf="signUpForm.controls['password'].touched 
+                                                    && signUpForm.controls['password'].invalid">
+                                        <span *ngIf="signUpForm.controls['password'].errors?.['required']">
+                                            <small>password is mandatory</small>
+                                        </span>
+                                        <span  *ngIf="signUpForm.controls['password'].errors?.['pattern']">
+                                            <small>password should have Minimum eight characters, at least one uppercase letter, one lowercase letter and one number   </small>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="mb-4">
+                                    <label>Enter Password Again: </label>
+                                    <input type="password"  class="form-control"  formControlName="rePassword">
+                                    <span *ngIf="signUpForm.controls['rePassword'].touched 
+                                                    && signUpForm.controls['rePassword'].invalid">
+                                        <span *ngIf="signUpForm.controls['rePassword'].errors?.['required']">
+                                            <small>please enter password again</small>
+                                        </span>
+                                        <span  *ngIf="signUpForm.controls['rePassword'].errors?.['pattern']">
+                                            <small>password should have Minimum eight characters, at least one uppercase letter, one lowercase letter and one number   </small>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+ 
+                        <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid" >Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+  
+    </div>
+  </div> -->
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding-top: 50px;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #2980b9;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding: 15px;
+        }
+
+        .card-body {
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        .mb-4 label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 8px rgba(41, 128, 185, 0.5);
+        }
+
+        .alert {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .alert-primary {
+            background-color: #cce5ff;
+            color: #004085;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .btn-primary {
+            background-color: #2980b9;
+            border-color: #2980b9;
+            color: white;
+            padding: 10px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #1f5d7d;
+        }
+
+        .card-footer {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .row {
+            margin-bottom: 20px;
+        }
+
+        .col-md-6 .mb-4 {
+            padding-right: 15px;
+        }
+
+        .col-md-6 input {
+            width: 100%;
+        }
+
+        /* Responsive Design for small screens */
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 15px;
+            }
+
+            .col-md-6 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form [formGroup]="signUpForm" (ngSubmit)="onRegister()">
+                    <div class="card">
+                        <div class="card-header">
+                            Sign Up
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-primary mb-4" *ngIf="successMsg">
+                                        {{successMsg}}
+                                    </div>
+                                    <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+                                        {{errorMsg}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label>Enter First Name: </label>
+                                        <input type="text" class="form-control" formControlName="firstName" (keyup)="resetMsg()">
+                                        <span *ngIf="signUpForm.controls['firstName'].touched && signUpForm.controls['firstName'].invalid">
+                                            <span *ngIf="signUpForm.controls['firstName'].errors?.['required']">
+                                                <small>First name is mandatory</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Middle Name: </label>
+                                        <input type="text" class="form-control" formControlName="middleName" (keyup)="resetMsg()">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Last Name: </label>
+                                        <input type="text" class="form-control" formControlName="lastName" (keyup)="resetMsg()">
+                                        <span *ngIf="signUpForm.controls['lastName'].touched && signUpForm.controls['lastName'].invalid">
+                                            <span *ngIf="signUpForm.controls['lastName'].errors?.['required']">
+                                                <small>Last name is mandatory</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Contact: </label>
+                                        <input type="text" class="form-control" formControlName="contactNumber" (keyup)="resetMsg()">
+                                        <span *ngIf="signUpForm.controls['contactNumber'].touched && signUpForm.controls['contactNumber'].invalid">
+                                            <span *ngIf="signUpForm.controls['contactNumber'].errors?.['required']">
+                                                <small>Contact is mandatory</small>
+                                            </span>
+                                            <span *ngIf="signUpForm.get('contact')?.hasError('minlength') || signUpForm.get('contact')?.hasError('maxlength')">
+                                                <small>Please provide a 10-digit contact number without the country code (+91).</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Gender: </label>
+                                        <input type="text" class="form-control" formControlName="gender" (keyup)="resetMsg()">
+                                        <span *ngIf="signUpForm.controls['gender'].touched && signUpForm.controls['gender'].invalid">
+                                            <span *ngIf="signUpForm.controls['gender'].errors?.['required']">
+                                                <small>Gender is mandatory</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Address: </label>
+                                        <input type="text" class="form-control" formControlName="address" (keyup)="resetMsg()">
+                                        <span *ngIf="signUpForm.controls['address'].touched && signUpForm.controls['address'].invalid">
+                                            <span *ngIf="signUpForm.controls['address'].errors?.['required']">
+                                                <small>Address is mandatory</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label>Enter Username: </label>
+                                        <input type="text" class="form-control" formControlName="username">
+                                        <span *ngIf="signUpForm.controls['username'].touched && signUpForm.controls['username'].invalid">
+                                            <span *ngIf="signUpForm.controls['username'].errors?.['required']">
+                                                <small>Username is mandatory</small>
+                                            </span>
+                                            <span *ngIf="signUpForm.get('username')?.hasError('minlength')">
+                                                <small>Username should be a minimum of 4 characters</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Password: </label>
+                                        <input type="password" class="form-control" formControlName="password">
+                                        <span *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].invalid">
+                                            <span *ngIf="signUpForm.controls['password'].errors?.['required']">
+                                                <small>Password is mandatory</small>
+                                            </span>
+                                            <span *ngIf="signUpForm.controls['password'].errors?.['pattern']">
+                                                <small>Password must have at least one uppercase letter, one lowercase letter, and one number</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label>Enter Password Again: </label>
+                                        <input type="password" class="form-control" formControlName="rePassword">
+                                        <span *ngIf="signUpForm.controls['rePassword'].touched && signUpForm.controls['rePassword'].invalid">
+                                            <span *ngIf="signUpForm.controls['rePassword'].errors?.['required']">
+                                                <small>Please enter the password again</small>
+                                            </span>
+                                            <span *ngIf="signUpForm.controls['rePassword'].errors?.['pattern']">
+                                                <small>Password must have at least one uppercase letter, one lowercase letter, and one number</small>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" [disabled]="signUpForm.invalid">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

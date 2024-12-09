@@ -1,0 +1,105 @@
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+        <div class="card shadow-lg border-0 rounded">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h4>Update Employee Details</h4>
+          </div>
+          <div class="card-body">
+            <!-- Success and Error Messages -->
+            <div class="row">
+              <div class="col-12">
+                <div class="alert alert-success mb-4" *ngIf="successMsg">
+                  <strong>Success!</strong> {{ successMsg }}
+                </div>
+                <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+                  <strong>Error!</strong> {{ errorMsg }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Fields -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <label for="firstName" class="form-label">First Name:</label>
+                  <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder="Enter First Name">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['firstName'].touched && employeeForm.controls['firstName'].invalid">
+                    <small *ngIf="employeeForm.controls['firstName'].errors?.['required']">First Name is required.</small>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="lastName" class="form-label">Last Name:</label>
+                  <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['lastName'].touched && employeeForm.controls['lastName'].invalid">
+                    <small *ngIf="employeeForm.controls['lastName'].errors?.['required']">Last Name is required.</small>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="dateOfBirth" class="form-label">Date of Birth:</label>
+                  <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['dateOfBirth'].touched && employeeForm.controls['dateOfBirth'].invalid">
+                    <small *ngIf="employeeForm.controls['dateOfBirth'].errors?.['required']">Date of Birth is required.</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <label for="contactNumber" class="form-label">Contact Number:</label>
+                  <input type="text" id="contactNumber" class="form-control" formControlName="contactNumber" placeholder="Enter Contact Number">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['contactNumber'].touched && employeeForm.controls['contactNumber'].invalid">
+                    <small *ngIf="employeeForm.controls['contactNumber'].errors?.['required']">Contact Number is required.</small>
+                    <small *ngIf="employeeForm.controls['contactNumber'].errors?.['pattern']">Please provide a valid contact number.</small>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="address" class="form-label">Address:</label>
+                  <input type="text" id="address" class="form-control" formControlName="address" placeholder="Enter Address">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['address'].touched && employeeForm.controls['address'].invalid">
+                    <small *ngIf="employeeForm.controls['address'].errors?.['required']">Address is required.</small>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="gender" class="form-label">Gender:</label>
+                  <input type="text" id="gender" class="form-control" formControlName="gender" placeholder="Enter Gender">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['gender'].touched && employeeForm.controls['gender'].invalid">
+                    <small *ngIf="employeeForm.controls['gender'].errors?.['required']">Gender is required.</small>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label for="salary" class="form-label">Salary:</label>
+                  <input type="text" id="salary" class="form-control" formControlName="salary" placeholder="Enter salary">
+                  <div class="invalid-feedback" *ngIf="employeeForm.controls['salary'].touched && employeeForm.controls['salary'].invalid">
+                    <small *ngIf="employeeForm.controls['salary'].errors?.['required']">Salary is required.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="mb-4">
+            <label for="photo" class="form-label">Profile Picture:</label>
+            <input type="file" class="form-control" formControlName="images" (change)="onFileSelect($event)">
+            <button class="btn btn-primary" >Upload</button>
+          </div> -->
+        
+
+          <!-- Footer with Submit Button -->
+          <div class="card-footer bg-light text-center py-3">
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="employeeForm.invalid">
+              Update Details
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

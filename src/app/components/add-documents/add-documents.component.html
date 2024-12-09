@@ -1,0 +1,186 @@
+<!-- 
+<div class="container mt-3">
+   
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white text-center">
+        Upload Id Proof
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="idProof" class="form-label">Id Proof</label>
+          <input type="file" id="idProof" (change)="onFileSelect($event, 'idProof')" class="form-control">
+        </div>
+        <button class="btn btn-primary" (click)="uploadFileAadhar()">Upload Id Proof</button>
+        <div *ngIf="msg1" class="alert alert-success mt-3">
+            {{ msg1 }}
+          </div>
+      </div>
+    </div>
+  
+
+    <div class="card mt-2">
+      <div class="card-header bg-primary text-white text-center">
+        Upload Passport size Photograph
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="photoUpload" class="form-label">Photograph</label>
+          <input type="file" id="photoUpload" (change)="onFileSelect($event, 'photo')" class="form-control">
+        </div>
+        <button class="btn btn-primary" (click)="uploadFilePhoto()">Upload Photograph</button>
+        <div *ngIf="msg2" class="alert alert-success mt-3">
+            {{ msg2 }}
+          </div>
+      </div>
+    </div>
+
+  </div>
+   -->
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .card-header {
+            font-size: 20px;
+            font-weight: 600;
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            padding: 10px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        .alert {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        .alert-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .alert-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .mb-3 {
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-3">
+    <div class="card mb-3">
+        <div class="card-header text-center">
+            Upload Id Proof
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="idProof" class="form-label">Id Proof</label>
+                <input type="file" id="idProof" (change)="onFileSelect($event, 'idProof')" class="form-control">
+            </div>
+            <button class="btn btn-primary" (click)="uploadFileAadhar()">Upload Id Proof</button>
+            <div *ngIf="msg1" class="alert alert-success mt-3">
+                {{ msg1 }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-2">
+        <div class="card-header text-center">
+            Upload Passport Size Photograph
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="photoUpload" class="form-label">Photograph</label>
+                <input type="file" id="photoUpload" (change)="onFileSelect($event, 'photo')" class="form-control">
+            </div>
+            <button class="btn btn-primary" (click)="uploadFilePhoto()">Upload Photograph</button>
+            <div *ngIf="msg2" class="alert alert-success mt-3">
+                {{ msg2 }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

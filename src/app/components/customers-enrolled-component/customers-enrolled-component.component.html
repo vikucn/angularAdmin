@@ -1,0 +1,9 @@
+<div class="customer-list-container">
+    <h2>Customers Enrolled in Bond {{ bondId }}</h2>
+    <ul class="customer-list">
+      <li *ngFor="let customer of enrolledCustomers">
+        <strong>{{ customer.name }}</strong> - {{ customer.email }}
+      </li>
+    </ul>
+  </div>
+  

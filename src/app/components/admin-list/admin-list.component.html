@@ -1,0 +1,253 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Table</title>
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .info-table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .info-table th {
+            background-color: #007BFF;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        .info-table tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s ease;
+        }
+
+        .info-table td {
+            color: #555;
+        }
+
+        .info-table td:hover {
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+
+
+        .info-table td:first-child {
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .info-table {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Personal Information</h1>
+<table class="info-table" *ngFor="let a of admin">
+    <tr>
+        <th>Field</th>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>First Name</td>
+        <td>{{a.firstName}}</td>
+    </tr>
+    <tr>
+        <td>Middle Name</td>
+        <td>{{a.middleName}}</td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>{{a.lastName}}</td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td>{{a.gender}}</td>
+    </tr>
+    <tr>
+        <td>Contact Number</td>
+        <td>{{a.contactNumber}}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{a.address}}</td>
+    </tr>
+</table>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Table</title>
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .info-table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .info-table th, .info-table td {
+            padding: 18px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .info-table th {
+            background-color: #2146aa;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .info-table tr:hover {
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        .info-table td {
+            color: #555;
+            font-weight: normal;
+            transition: color 0.3s ease;
+        }
+
+        .info-table td:hover {
+            color: #4CAF50;
+            font-weight: bold;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        .info-table td:first-child {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-table td:last-child {
+            color: #777;
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .info-table {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Personal Information</h1>
+<table class="info-table" *ngFor="let a of admin">
+    <tr>
+        <th>Field</th>
+        <th>Details</th>
+    </tr>
+    <tr>
+        <td>First Name</td>
+        <td>{{a.firstName}}</td>
+    </tr>
+    <tr>
+        <td>Middle Name</td>
+        <td>{{a.middleName}}</td>
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td>{{a.lastName}}</td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td>{{a.gender}}</td>
+    </tr>
+    <tr>
+        <td>Contact Number</td>
+        <td>{{a.contactNumber}}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{a.address}}</td>
+    </tr>
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+
+<!-- 
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Overall User Stats - Donut</h4>
+                </div>
+                <div class="card-body">
+                    <p-chart type="doughnut" [data]="basicData" [options]="basicOptionsDonut" [width]="donutWidth"></p-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-primary text-white text-center rounded-3">
+                    <h4 class="mb-0">Overall User Stats - Donut</h4>
+                </div>
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <p-chart type="doughnut" [data]="basicData" [options]="basicOptionsDonut" [width]="donutWidth"></p-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-header {
+        background: linear-gradient(135deg, #0061ff, #00b2ff);
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem; /* Increased padding for better spacing */
+    }
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h4 {
+        font-size: 1.75rem; /* Increased font size for better readability */
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .col-lg-8 {
+        /* This will make the chart container wider */
+        max-width: 80%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

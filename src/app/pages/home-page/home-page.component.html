@@ -1,0 +1,219 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexaware Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2980b9;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 30px;
+        }
+
+        .navbar .links a {
+            color: white;
+            margin-left: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .links a:hover {
+            color: #f39c12;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 50px;
+            background: linear-gradient(135deg, #2980b9, #6bb9e1);
+            color: white;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .hero .text-content h1 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero .text-content p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+        }
+
+        .options {
+            display: flex;
+            justify-content: center;
+            margin: 60px 0;
+        }
+
+        .option {
+            background-color: white;
+            padding: 40px 30px;
+            margin: 0 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .option h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2980b9;
+        }
+
+        .option p {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer h5 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .footer .social-icons a {
+            color: white;
+            font-size: 30px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        .footer .links a {
+            color: #ccc;
+            font-size: 16px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer .links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="navbar">
+        <h1>Hexaware Bank</h1>
+        <div class="links">
+            <a [routerLink]="['login']">Login</a>
+            <a [routerLink]="['sign-up']">Sign Up</a>
+        </div>
+    </div>
+
+  
+    <section class="hero">
+        <div class="text-content">
+            <h1>Welcome to Hexaware Bank</h1>
+            <p>Digital Banking Made Simple and Secure</p>
+            
+        </div>
+    </section>
+
+        <!-- Options Section -->
+        <section class="options">
+          <div class="option">
+              <h2>Banking Services</h2>
+              <p>Manage your accounts and transactions with ease.</p>
+          </div>
+          <div class="option">
+              <h2>Loans & Credits</h2>
+              <p>Get the financial support you need with flexible terms.</p>
+          </div>
+          <div class="option">
+              <h2>Investments</h2>
+              <p>Grow your wealth with our safe and rewarding investment options.</p>
+          </div>
+      </section>
+
+
+   
+    <div class="footer">
+        <h5>Contact Us</h5>
+        <p>If you need assistance, feel free to reach out to our customer support.</p>
+        <div class="social-icons">
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-whatsapp"></a>
+            <a href="#" class="fab fa-twitter"></a>
+        </div>
+        <div class="links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Careers</a>
+            <a href="#">FAQ</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
